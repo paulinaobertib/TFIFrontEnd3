@@ -1,34 +1,42 @@
 //para que solo se compile la pagina en la que el usuario se encuentra
 import { lazy } from "react";
 
-const DynamicImport = (param) => {
-    lazy(() => 
-        import(`./${param.toLowerCase()}/${param}.jsx`),
-    );
-};
+/*const DynamicImport = (param) => {
+    lazy(() => import(`./../Components/${param}`));
+}*/
 
+const Home = lazy(() => import("./../Components/Home"));
+const Dentist = lazy(() => import("./../Components/Dentist"));
+const Favs = lazy(() => import("./../Components/Favs"));
+const Contact = lazy(() => import("./../Components/Contact"));
+const Error = lazy(() => import("./../Components/Error"));
 
 export const navigation = [
     {
         id: 1,
         path: "/home",
-        Element: DynamicImport("Home"),
+        Element: Home,
     },
     {
         id: 2,
-        path: "home/dentist/:id",
-        Element: DynamicImport("Dentist"),
+        path: "/home/dentist/:id",
+        Element: Dentist,
     },
     {
         id: 3,
-        path: "favs",
-        Element: DynamicImport("Favs"),
+        path: "/favs",
+        Element: Favs,
     },
     {
-        id: 2,
-        path: "contact",
-        Element: DynamicImport("Contact"),
+        id: 4,
+        path: "/contact",
+        Element: Contact,
     },
+    {
+        id: 5,
+        path: "*",
+        Element: Error,
+    }
 ];
 
-//login y error no van aca
+//login no va aca
