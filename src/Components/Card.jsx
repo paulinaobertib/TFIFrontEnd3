@@ -10,7 +10,7 @@ const Card = ({ name, username, id }) => {
   };
   
   const selectDentist = () => {
-    navigate(`/home/detail/${id}`);
+    navigate(`/home/dentist/${id}`);
   };
 
   return (
