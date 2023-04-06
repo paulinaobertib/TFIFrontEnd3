@@ -14,13 +14,14 @@ const Card = ({ name, username, id }) => {
   };
 
   return (
-    <div onClick={selectDentist}>
-        <img src="./../../public/images/doctor.jpg" alt="dentista"/>
+    <div>
+        <section onClick={selectDentist}>
+          <img src="./../../public/images/doctor.jpg" alt="dentista"/>
+        </section>
         <p>{id}</p>
         <p>{name}</p>
         <p>{username}</p>
-
-      <button onClick={Fav} className="favButton">FAV</button>
+        <button onClick={Fav} className="favButton">FAV</button>
     </div>
   );
 };

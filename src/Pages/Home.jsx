@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Dentists from "./Dentists"
+import Dentists from "../Components/Dentists"
 
 const Home = () => {
 

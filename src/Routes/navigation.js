@@ -5,11 +5,11 @@ import { lazy } from "react";
     lazy(() => import(`./../Components/${param}`));
 }*/
 
-const Home = lazy(() => import("./../Components/Home"));
-const DentistDetails = lazy(() => import("./../Components/DentistDetails"));
-const Favs = lazy(() => import("./../Components/Favs"));
-const Contact = lazy(() => import("./../Components/Contact"));
-const Error = lazy(() => import("./../Components/Error"));
+const Home = lazy(() => import("../Pages/Home"));
+const DentistDetails = lazy(() => import("../Pages/DentistDetails"));
+const Favs = lazy(() => import("../Pages/Favs"));
+const Contact = lazy(() => import("../Pages/Contact"));
+const Error = lazy(() => import("../Pages/Error"));
 
 export const navigation = [
     {
