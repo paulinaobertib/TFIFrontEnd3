@@ -20,17 +20,15 @@ const DentistDetails = () => {
 
     return (
         <div>
+            <h1>Detalles del dentista seleccionado: </h1>
+            <button onClick={ () => navigate(-1)}>Volver</button>
             <div>
-                <h1>Detalles del dentista seleccionado: </h1>
-                <button onClick={ () => navigate(-1)}>Volver</button>
-                <div>
-                    <img src="./../../public/images/doctor.jpg" alt="dentista"/>
-                    <p>{dentist?.name}</p>
-                    <p>{dentist?.username}</p>
-                    <p>{dentist?.email}</p>
-                    <p>{dentist?.phone}</p>
-                    <p>{dentist?.website}</p>
-                </div>
+                <img src="./../../public/images/doctor.jpg" alt="dentista"/>
+                <p>{dentist?.name}</p>
+                <p>{dentist?.username}</p>
+                <p>{dentist?.email}</p>
+                <p>{dentist?.phone}</p>
+                <p>{dentist?.website}</p>
             </div>
         </div>
     )
