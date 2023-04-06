@@ -6,7 +6,7 @@ import { lazy } from "react";
 }*/
 
 const Home = lazy(() => import("./../Components/Home"));
-const Dentist = lazy(() => import("./../Components/Dentist"));
+const DentistDetails = lazy(() => import("./../Components/DentistDetails"));
 const Favs = lazy(() => import("./../Components/Favs"));
 const Contact = lazy(() => import("./../Components/Contact"));
 const Error = lazy(() => import("./../Components/Error"));
@@ -20,7 +20,7 @@ export const navigation = [
     {
         id: 2,
         path: "/home/dentist/:id",
-        Element: Dentist,
+        Element: DentistDetails,
     },
     {
         id: 3,
