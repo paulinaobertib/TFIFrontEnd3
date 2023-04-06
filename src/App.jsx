@@ -17,8 +17,8 @@ function App() {
                 <Route key={id} path={path} element={<Element />} />
               ))
             }
-          </Routes>
-          <Footer />
+            </Routes>
+            <Footer />
           </div>
         </BrowserRouter>
     </Suspense>

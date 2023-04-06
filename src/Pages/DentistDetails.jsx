@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react' 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 
 const DentistDetails = () => {
+
+    const navigate = useNavigate();
 
     const [dentist, setDentist] = useState()
     const {id} = useParams()
