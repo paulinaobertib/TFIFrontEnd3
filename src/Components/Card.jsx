@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Favs from "./../Pages/Favs"
 
 const Card = ({ name, username, id }) => {
 
   const navigate =  useNavigate();
   
-  const Fav = (id) => {
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-  };
+  const [isFavorite, setIsFavorite] = useState(!!favorites.find(fav => fav.id == id))
+
+  const Fav = () => {
+    setIsFavorite(true)
+    favorites.push({ name, username, id })
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+  }
   
   const selectDentist = () => {
     navigate(`/home/dentist/${id}`);
@@ -22,7 +27,7 @@ const Card = ({ name, username, id }) => {
         <p>{id}</p>
         <p>{name}</p>
         <p>{username}</p>
-        <button onClick={Fav(id)} className="favButton">FAV</button>
+        <button onClick={Fav} disabled={isFavorite} className="favButton">FAV</button>
     </div>
   );
 };
