@@ -1,6 +1,6 @@
 //para que solo se compile la pagina en la que el usuario se encuentra
 import { lazy } from "react";
-
+import Login from "./../Pages/Login"
 /*const DynamicImport = (param) => {
     lazy(() => import(`./../Components/${param}`));
 }*/
@@ -38,5 +38,7 @@ export const navigation = [
         Element: Error,
     }
 ];
+
+export {Login};
 
 //login no va aca
