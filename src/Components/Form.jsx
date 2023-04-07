@@ -66,7 +66,7 @@ const Form = ({ handleFetchValues }) => {
                 }
                 </form>
                 <Container content="row">
-                    <button form="contact-form" btn="submit" type="submit">SUBMIT</button>
+                    <button name='sbmt' form="contact-form" btn="submit" type="submit">SUBMIT</button>
                 </Container>
             </FormContainer>
         </>

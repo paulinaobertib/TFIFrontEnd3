@@ -20,7 +20,7 @@ const Card = ({ name, username, id }) => {
   };
 
   return (
-    <div>
+    <div className="eachCard">
         <section onClick={selectDentist}>
           <img src="./../../public/images/doctor.jpg" alt="dentista"/>
         </section>

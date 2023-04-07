@@ -9,7 +9,8 @@ const Home = () => {
     return (
         <div>
             <div>
-                <h1>Dentistas - Página Principal</h1>
+                <h1>Dentistas</h1>
+                <h2>Página Principal</h2>
                 <button onClick={ () => navigate(-1)}>Volver</button>
                 <Dentists />
             </div>

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useNavigate, Navigate, Router } from "rea
 import { navigation, Login } from "./Routes/navigation"
 import Footer from "./Components/Footer"
 import Navbar from "./Components/Navbar"
-import "./styles/modes.css"
+import "../src/index.css";
 import NewContextProvider from "./Components/utils/Context"
 import { ProtectedRoutes } from "./Components/utils/ProtectedRoutes"
 

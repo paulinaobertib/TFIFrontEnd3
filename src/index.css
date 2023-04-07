@@ -1,3 +1,4 @@
+/* ROOT*/ 
 :root {
 
   --first-color: #C9DFF2;
@@ -6,14 +7,13 @@
   --fourth-color: #1E593E;; 
   --fifth-color:  #F2BF5E;; 
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
 
   color-scheme: light dark;
   color: var(--first-color);
   background-color: var(--fourth-color);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,28 +21,20 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* general */
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  color: var(--first-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
-
 h1{
+  text-align: center;
+}
+h2{
+  background-color: var(--fifth-color);
+  padding: 10px;
+  border: 2px solid rgb(247, 248, 250);
   text-align: center;
 }
 
@@ -60,7 +52,7 @@ a{
   cursor: pointer;
 }
 a:hover{
-  color: rgb(136, 136, 136);
+  color: var(--fourth-color);
 } 
 
 footer {
@@ -94,8 +86,6 @@ form{
   color: var(--fourth-color);
 }
 
-
-
 table {
  border-collapse: collapse;
     border-spacing: 0;
@@ -115,45 +105,39 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
-  background-color: #12121296;
-  color: var(--first-color);
-}
-.dark > a {
-  color: var(--first-color);
-}
+
 
 /* ---- GRID HOME CARDS ----*/
-div.grid{
-  display: flex;
-    justify-content: space-evenly;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 90vw;
-    height: auto;
+div.card-grid{
+  gap: 15px 15px 15px 15px;
 }
-
-.dentCard:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
 div.dentCard{
+display: flex;
+flex-wrap: wrap;
+margin:5px 5px 5px 55px;
+}
+.eachCard{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  box-shadow: 5px 5px 7px 5px ;
-  border: 0.5px solid --fifth-color;
+  box-shadow: 2px 2px 4px 2px ;
+  border: 0.1px solid --third-color;
   border-radius: 20px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   position: relative;
-  width: 200px;  
+  width: 250px;
 }
-div.dentCard img{
+
+.eachCard:hover{
+  border: 0.5px solid rgb(206, 217, 142);
+}
+
+div.eachCard img{
   border-radius: 50%;
-  width:100%
+  width:50%;
 }
+
 
 /* --- GRID CARD SELECTED--*/
 div.detailEach{
@@ -167,10 +151,105 @@ div.detailEach{
   border: 0.5px solid --first-color;
   border-radius: 20px;
   margin: 0px 150px 0px 150px;
+  width: 250px;
+  height: auto;
 }
+
+div.detailsDent{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
 div.detailsDent img{
+  width:100%;
+  background-size: cover;
+  border: 0.5px solid --fourth-color;
+  border-radius: 20px;
+}
+
+
+/* --- GRID FAVORITES--*/
+
+div.card-grid{
+  display: flex;
+  flex-wrap: wrap;
+  margin:5px 5px 5px 55px;
+}
+div.eachCard{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 4px 2px ;
+  border: 0.1px solid --third-color;
+  border-radius: 20px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  position: relative;
+  width: 250px;
+}
+div.card-grid img{
   width:25%;
   background-size: cover;
   border: 0.5px solid --fourth-color;
   border-radius: 20px;
+}
+
+/* Organization*/
+
+div h3{
+text-align: center;
+}
+
+/* --- BOTONES --- */
+.favButton{
+  background-color: var(--fifth-color);
+  border: 0.5px solid --first-color;
+  padding: 10px;
+  width: 50%;
+  cursor: pointer;
+  color: var(--second-color);
+}
+
+button {
+  background-color: var(--fifth-color);
+  padding: 10px;
+  border: none;
+  border: 2px solid rgb(247, 248, 250);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ----CHANGE THEME----- */
+
+.dark{
+  background-color: #12121296;
+  color: var(--first-color);
+}
+.dark > a {
+  color: var(--fifth-color);
+}
+
+.dark h2{
+  background-color: var(--fourth-color);
+  padding: 10px;
+  border: 2px solid rgb(247, 248, 250);
+  text-align: center;
+}
+
+.dark nav{
+  background-color: var(--fourth-color);
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.dark div.detailEach{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--second-color);
+  color: #F2BF5E;
 }

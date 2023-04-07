@@ -14,7 +14,7 @@ const Contact = () =>  {
   return (
     <>
     <Form handleFetchValues={handleFetchValues} />
-    {show && <h3>Gracias {values.name} te contactaremos cuanto antes vía email</h3>}
+    {show && <h3> ¡Gracias, {values.name} ! Te contactaremos cuanto antes vía email ✉️</h3>}
     </>
   )
 }

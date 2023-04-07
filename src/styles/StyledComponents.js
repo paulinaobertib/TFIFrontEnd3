@@ -8,7 +8,7 @@ export const FormContainer = styled.div`
     gap: 10px;
     border-radius: 10px;
     border: 2px solid rgb(247, 248, 250);
-    background-color: #BDB76B;
+    background-color: #F2BF5E;
     margin-left: 35%;
 `;
 
