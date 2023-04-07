@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react' 
-import { useParams, useNavigate} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const DentistDetails = () => {
-
-    const navigate = useNavigate();
 
     const [dentist, setDentist] = useState()
     const {id} = useParams()
@@ -23,7 +21,6 @@ const DentistDetails = () => {
     return (
         <div className='detailsDent'>
             <h1>Detalles del dentista seleccionado: </h1>
-            <button onClick={ () => navigate(-1)}>Volver</button>
             <div className='detailEach'>
                 <img src="./../../public/images/doctor.jpg" alt="dentista"/>
                 <p>{dentist?.name}</p>

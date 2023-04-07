@@ -253,3 +253,7 @@ button {
   background-color: var(--second-color);
   color: #F2BF5E;
 }
+
+.buttonContact {
+  margin-top: 20px;
+}

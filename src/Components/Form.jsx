@@ -21,9 +21,9 @@ const Form = ({ handleFetchValues }) => {
             .min(3, 'Al menos debe ingresar tres caracteres')
             .max(20, 'Ha superado el maximo de 20 caracteres')
             .trim("No debe tener espacios en blanco").strict()
-            .required("Por favor, chequea que la información sea correcta.❣️"),
+            .required("Por favor, completa.❣️"),
           email: Yup.string().email("Por favor, el email debe ser valido.❣️")
-            .required("Por favor, chequea que la información sea correcta.❣️"),
+            .required("Por favor, completa.❣️"),
         })
       )
     )
@@ -66,7 +66,7 @@ const Form = ({ handleFetchValues }) => {
                 }
                 </form>
                 <Container content="row">
-                    <button name='sbmt' form="contact-form" btn="submit" type="submit">SUBMIT</button>
+                    <button className='buttonContact' name='sbmt' form="contact-form" btn="submit" type="submit">SUBMIT</button>
                 </Container>
             </FormContainer>
         </>
