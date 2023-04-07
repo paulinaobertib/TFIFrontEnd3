@@ -21,10 +21,10 @@ const DentistDetails = () => {
     },[])
 
     return (
-        <div>
+        <div className='detailsDent'>
             <h1>Detalles del dentista seleccionado: </h1>
             <button onClick={ () => navigate(-1)}>Volver</button>
-            <div>
+            <div className='detailEach'>
                 <img src="./../../public/images/doctor.jpg" alt="dentista"/>
                 <p>{dentist?.name}</p>
                 <p>{dentist?.username}</p>

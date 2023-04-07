@@ -18,12 +18,14 @@ const Dentist = () =>  {
     },[])
 
     return (
-        <div>
-            <h2>Dentistas: </h2>
-            <div>
+        <div className='gridOut'>
+            <h2>Dentistas</h2>
+            <div className='grid'>
+            <div className='dentCard'>
                 {
                     dentist.length ? dentist.map((dentist) => <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id}/>): null
                 }
+            </div>
             </div>
         </div>
     )

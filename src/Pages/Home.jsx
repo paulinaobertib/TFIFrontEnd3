@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div>
             <div>
-                <h1>Home</h1>
+                <h1>Dentistas - Página Principal</h1>
                 <button onClick={ () => navigate(-1)}>Volver</button>
                 <Dentists />
             </div>

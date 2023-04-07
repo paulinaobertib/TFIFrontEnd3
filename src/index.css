@@ -1,11 +1,18 @@
 :root {
+
+  --first-color: #C9DFF2;
+  --second-color: #038C65;
+  --third-color: #038C4C; 
+  --fourth-color: #1E593E;; 
+  --fifth-color:  #F2BF5E;; 
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--first-color);
+  background-color: var(--fourth-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,9 +23,9 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  color: var(--first-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,14 +47,14 @@ h1{
 }
 
 nav{
+  background-color: var(--second-color);
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: 1rem;
 }
 
 a{
-  color: #000;
+  color: var(--first-color);
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
@@ -84,31 +91,10 @@ form{
   width: 300px;
   height: 100px;
   margin: 0 auto;
+  color: var(--fourth-color);
 }
 
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
-}
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
-.card-grid{
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
 
 table {
  border-collapse: collapse;
@@ -131,8 +117,60 @@ tr:nth-child(even) {
 
 .dark{
   background-color: #12121296;
-  color: white;
+  color: var(--first-color);
 }
 .dark > a {
-  color: white;
+  color: var(--first-color);
+}
+
+/* ---- GRID HOME CARDS ----*/
+div.grid{
+  display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90vw;
+    height: auto;
+}
+
+.dentCard:hover{
+  border: 0.5px solid rgb(206, 217, 142);
+}
+
+div.dentCard{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 7px 5px ;
+  border: 0.5px solid --fifth-color;
+  border-radius: 20px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  position: relative;
+  width: 200px;  
+}
+div.dentCard img{
+  border-radius: 50%;
+  width:100%
+}
+
+/* --- GRID CARD SELECTED--*/
+div.detailEach{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 3px 5px 3px ;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border: 0.5px solid --first-color;
+  border-radius: 20px;
+  margin: 0px 150px 0px 150px;
+}
+div.detailsDent img{
+  width:25%;
+  background-size: cover;
+  border: 0.5px solid --fourth-color;
+  border-radius: 20px;
 }
