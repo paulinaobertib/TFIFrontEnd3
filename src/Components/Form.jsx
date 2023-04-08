@@ -29,7 +29,6 @@ const Form = ({ handleFetchValues }) => {
     )
 
     const onSubmit = (values) => {
-        console.log(values);
         handleFetchValues(values);
       };
     
