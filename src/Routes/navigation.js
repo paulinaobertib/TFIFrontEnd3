@@ -1,9 +1,5 @@
-//para que solo se compile la pagina en la que el usuario se encuentra
 import { lazy } from "react";
 import Login from "../Pages/Login.jsx"
-/*const DynamicImport = (param) => {
-    lazy(() => import(`./../Components/${param}`));
-}*/
 
 const Home = lazy(() => import("../Pages/Home"));
 const DentistDetails = lazy(() => import("../Pages/DentistDetails"));

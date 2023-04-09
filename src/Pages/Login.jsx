@@ -1,80 +1,73 @@
-import React, { useState, useContext } from 'react'
-import { useNavigate} from "react-router-dom";
-import { NewContext } from '../Components/utils/Context';
+import React, { useState, Fragment, useContext } from 'react'
+import { AuthContext } from '../Components/utils/AuthContext/AuthContext';
 import { Box, Button, TextField } from '@mui/material';
-import { useFormik } from 'formik';
-import * as Yup from "yup";
-import { FormContainer, Container, Input, Title, Error} from './../styles/StyledComponents';
+import PasswordInput from "../Components/utils/Inputs/PasswordInput";
+import { Link, useNavigate } from 'react-router-dom';
+import { Orbit } from '@uiball/loaders'
+import { waait } from '../Components/utils/helper';
 
-const inputs = [
-    { id: 1, label: "Email", placeholder: "Ingresa tu email: ", name: "email" },
-    { id: 2, label: "Password", placeholder: "Ingresa tu password: ", name: "password" }
-]
-
-const Login = ({ handleFetchValues }) => {
-
-    const navigate = useNavigate();
-
-    const getInitialValues = () => ({
-        email: "",
-        password: ""
-      });
-    
-      const getValidationSchema = () => (
-        Yup.lazy(() =>
-          Yup.object().shape({
-            email: Yup.string().email("Por favor, el email debe ser valido.❣️")
-              .required("Por favor, completa.❣️"),
-            password: Yup.string()
-              .required("Por favor, completa.❣️"),
-          })
-        )
-      )
-  
-      const onSubmit = (values) => {
-          console.log(values);
-          handleFetchValues(values);
+const Login = () => {
+  const [values, setValues] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const { handleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (values.email && values.password) {
+        const { user, password, token } = handleLogin();
+        if (user === values.email && password === values.password) {
+          console.log("hola")
+          await waait();
+          setLoading(false);
           navigate("/home");
-        };
-      
-        const { values, setFieldValue, errors, handleSubmit } = useFormik({
-          initialValues: getInitialValues(),
-          validationSchema: getValidationSchema(),
-          validateOnChange: false,
-          validateOnBlur: false,
-          onSubmit
-        })
-      
-      return (
-          <>
-              <Title>Login</Title>
-              <FormContainer from="contact">
-                  <form id="contact-form" onSubmit={handleSubmit}>
-                  {
-                    inputs.map(field => (
-                      <Container key={field.id}>
-                        <label>{field.label}</label>
-                        <Input
-                          name={field.name}
-                          placeholder={field.placeholder}
-                          value={values[field.name]}
-                          onChange={(e) => setFieldValue(field.name, e.target.value)}
-                        />
-                        {
-                          errors[field.name] && (
-                            <Error>{errors[field.name]}</Error>
-                          )
-                        }
-                      </Container>
-                    ))
-                  }
-                  </form>
-                  <Container content="row">
-                      <button className='buttonContact' name='sbmt' form="contact-form" btn="submit" type="submit">SUBMIT</button>
-                  </Container>
-              </FormContainer>
-          </>
-      )
+          sessionStorage.setItem("toke", JSON.stringify(token));
+        } else {
+        alert("No estas registrado");
+        navigate("/auth/register");
+        }
+    } else {
+      alert("Te faltan los valores");
+      setLoading(false);
+    }
+
+  };
+
+  return (
+    <Fragment>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", gap: "15px" }}
+        component="form"
+        onSubmit={handleSubmit}
+      >
+        <TextField
+          fullWidth
+          name="email"
+          size="small"
+          type="email"
+          label="Email *"
+          placeholder="Ingrese su correo"
+          value={values.email}
+          onChange={(e) => setValues({ ...values, email: e.target.value })}
+        />
+        <PasswordInput values={values} setValues={setValues} />
+        <Box sx={{ textAlign: "right" }}>
+          <Button disabled={loading} type="submit" size="small" variant="contained">
+            {
+              loading ? (
+                <Orbit
+                  size={25}
+                  speed={1.5}
+                  color="white"
+                />
+              ) : "Submit"
+            }
+          </Button>
+        </Box>
+      </Box>
+      <Link to="/auth/register">¿No tienes cuenta aún?</Link>
+    </Fragment>
+  )
 }
 
-export default Login;
+export default Login

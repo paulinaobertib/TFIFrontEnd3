@@ -1,11 +1,13 @@
-import React, { Suspense, useState } from "react"
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
-import { navigation, Login } from "./Routes/navigation"
-import Footer from "./Components/Footer"
+import React, { Suspense, useState } from 'react'
+import AuthContextProvider from './Components/utils/AuthContext/AuthContext';
+import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { ProtectedRoutes } from './Routes/ProtectedRoutes';
+import AuthLayout from './Components/utils/AuthContext/AuthLayout';
+import Login from "./Pages/Login";
+import Register from './Pages/Register';
+import { navigation } from "./Routes/navigation";
 import Navbar from "./Components/Navbar"
-import "../src/index.css";
-import NewContextProvider from "./Components/utils/Context"
-import { ProtectedRoutes } from "./Components/utils/ProtectedRoutes"
+import Footer from "./Components/Footer"
 
 function App() {
 
@@ -22,26 +24,32 @@ function App() {
   };
 
   return (
-    <NewContextProvider>
-    <Suspense fallback={<h1>Cargando...</h1>}>
+    <Suspense fallback={<h1>Hola, Cargando tu página...</h1>}>
+      <AuthContextProvider>
         <BrowserRouter>
-          <div className={ darkMode? "dark" : "light"}>
-            <Navbar toggleMode={toggleMode} />
-            <Routes>
-            <Route path='/login' element={<Login handleFetchValues={handleFetchValues} />}/>
-            <Route element={<ProtectedRoutes/>} />
-            {
-              navigation.map(({ id, path, Element }) => (
-                <Route key={id} path={path} element={<Element />} />
-              ))
-            }
-            <Route path='/' element={<Navigate to="/login" />}/>
-            </Routes>
-            <Footer />
-          </div>
+          <Routes>
+            <Route path="/auth" element={<AuthLayout />}>
+              <Route path="/auth/login" element={<Login />} />
+              <Route path="/auth/register" element={<Register />} />
+            </Route>
+            <Route element={<ProtectedRoutes />}>
+              {
+                navigation.map(({ id, path, Element }) => (
+                  <Route key={id} path={path} element={
+                    <>
+                      <Navbar />
+                      <Element />
+                      <Footer />
+                    </>
+                  } />
+                ))
+              }
+            </Route>
+            <Route path="/" element={<Navigate to="/auth/login" />} />
+          </Routes>
         </BrowserRouter>
+      </AuthContextProvider>
     </Suspense>
-    </NewContextProvider>
   )
 }
 
