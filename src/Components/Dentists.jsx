@@ -19,7 +19,7 @@ const Dentist = () =>  {
 
     return (
         <div className='gridOut'>
-            <h2>Selección de Odontólogos</h2>
+            <h3>Selección de Odontólogos</h3>
             <div className='grid'>
             <div className='dentCard'>
                 {

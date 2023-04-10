@@ -16,11 +16,25 @@ const Register = () => {
 
         if (values.name) {
             await waait();
-            alert(`Gracias por ingresar ${values.name}! El usuario asignado es marianapaulina@dh.com y la contraseña es holamundo`)
+            Swal.fire({
+                title: '😃',
+                text: `Gracias por ingresar ${values.name}! El usuario asignado es marianapaulina@dh.com y la contraseña es holamundo`,
+                icon: 'success',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                  },
+                  hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                  }
+              })
             navigate(-1)
             setLoading(false);
         } else {
-            alert("Te faltan los valores");
+            Swal.fire({
+                title: '👀',
+                text: 'No has ingresado los valores',
+                icon: 'error'
+              })
             setLoading(false);
         }
     }

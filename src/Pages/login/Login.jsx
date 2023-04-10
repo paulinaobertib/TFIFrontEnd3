@@ -26,12 +26,32 @@ const Login = () => {
           navigate("/home");
           sessionStorage.setItem("toke", JSON.stringify(token));
         } else {
-          alert("No se encuentra registrado");
+          Swal.fire({
+            title: '👀',
+            text: 'No se encuentra registrado',
+            icon: 'warning',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
           navigate("/auth/register");
         }
 
     } else {
-      alert("Te faltan los valores");
+      Swal.fire({
+        title: '👀',
+        text: 'No has ingresado los valores',
+        icon: 'error',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
       setLoading(false);
     }
 

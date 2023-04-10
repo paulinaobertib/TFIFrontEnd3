@@ -36,7 +36,8 @@ body {
 h1{
   text-align: center;
 }
-h2{
+
+h3{
   background-color: var(--fifth-color);
   padding: 10px;
   border: 2px solid rgb(247, 248, 250);
