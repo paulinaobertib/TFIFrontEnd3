@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import bg from "./login_bb.jpeg";
+import bg from "./teeth.jpg";
 
 export const AuthContainer = styled(Box)`
   background-image: url(${bg});

@@ -3,7 +3,7 @@ import AuthContextProvider from './Components/utils/AuthContext/AuthContext';
 import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { ProtectedRoutes } from './Routes/ProtectedRoutes';
 import AuthLayout from './Components/utils/AuthContext/AuthLayout';
-import Login from "./Pages/Login";
+import Login from "./Pages/login/Login";
 import Register from './Pages/Register';
 import { navigation } from "./Routes/navigation";
 import Navbar from "./Components/Navbar"

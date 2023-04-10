@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import Login from "../Pages/Login.jsx"
+import Login from "../Pages/login/Login.jsx"
 
 const Home = lazy(() => import("../Pages/Home"));
 const DentistDetails = lazy(() => import("../Pages/DentistDetails"));

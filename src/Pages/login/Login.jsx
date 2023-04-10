@@ -1,10 +1,10 @@
 import React, { useState, Fragment, useContext } from 'react'
-import { AuthContext } from '../Components/utils/AuthContext/AuthContext';
+import { AuthContext } from '../../Components/utils/AuthContext/AuthContext';
 import { Box, Button, TextField } from '@mui/material';
-import PasswordInput from "../Components/utils/Inputs/PasswordInput";
+import PasswordInput from "../../Components/utils/Inputs/PasswordInput";
 import { Link, useNavigate } from 'react-router-dom';
 import { Orbit } from '@uiball/loaders'
-import { waait } from '../Components/utils/helper';
+import { waait } from '../../Components/utils/helper';
 
 const Login = () => {
   const [values, setValues] = useState({ email: "", password: "" });
