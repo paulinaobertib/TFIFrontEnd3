@@ -18,44 +18,59 @@ const Login = () => {
     setLoading(true);
 
     if (values.email && values.password) {
-        const { user, password, token } = handleLogin();
+      const { user, password, token } = handleLogin();
 
-        if (user === values.email && password === values.password) {
+      if (user === values.email) {
+        if (password === values.password) {
           await waait();
           setLoading(false);
           navigate("/home");
           sessionStorage.setItem("toke", JSON.stringify(token));
-        } else {
-          Swal.fire({
+          } else {
+            Swal.fire({
             title: '👀',
-            text: 'No se encuentra registrado',
+            text: 'Contraseña incorrecta',
             icon: 'warning',
             showClass: {
-              popup: 'animate__animated animate__fadeInDown'
+              popup: 'animate_animated animate_fadeInDown'
             },
             hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
+              popup: 'animate_animated animate_fadeOutUp'
             }
           })
-          navigate("/auth/register");
-        }
+          navigate("/")
+          }
+      } else {
+        Swal.fire({
+          title: '👀',
+          text: 'No se encuentra registrado',
+          icon: 'warning',
+          showClass: {
+            popup: 'animate_animated animate_fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate_animated animate_fadeOutUp'
+          }
+        })
+        navigate("/auth/register");
+      }
 
-    } else {
-      Swal.fire({
-        title: '👀',
-        text: 'No has ingresado los valores',
-        icon: 'error',
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      })
-      setLoading(false);
-    }
+  } else {
+    Swal.fire({
+      title: '👀',
+      text: 'No has ingresado los valores',
+      icon: 'error',
+      showClass: {
+        popup: 'animate_animated animate_fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate_animated animate_fadeOutUp'
+      }
+    })
+    setLoading(false);
+  }
 
-  };
+};
 
   return (
     <Fragment>
