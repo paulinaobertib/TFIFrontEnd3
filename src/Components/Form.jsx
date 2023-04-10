@@ -43,7 +43,7 @@ const Form = ({ handleFetchValues }) => {
     return (
         <>
             <Title>CONTACTO</Title>
-            <FormContainer from="contact">
+            <FormContainer from="contact" className='contact'>
                 <form id="contact-form" onSubmit={handleSubmit}>
                 {
                   inputs.map(field => (

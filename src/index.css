@@ -241,7 +241,7 @@ button {
   color: var(--fifth-color);
 }
 
-.dark h2{
+.dark h3{
   background-color: var(--fourth-color);
   padding: 10px;
   border: 2px solid rgb(247, 248, 250);
@@ -279,9 +279,13 @@ button {
   flex-direction: column;
   align-items: center;
   background-color: var(--second-color);
-  color: #F2BF5E;
+  color: var(--fifth-color);
 }
 
 .buttonContact {
   margin-top: 20px;
+}
+.dark div.contact{
+  background-color: var(--second-color);
+  color: white;
 }
