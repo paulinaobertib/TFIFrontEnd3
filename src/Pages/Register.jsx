@@ -33,7 +33,13 @@ const Register = () => {
             Swal.fire({
                 title: '👀',
                 text: 'No has ingresado los valores',
-                icon: 'error'
+                icon: 'error',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                  },
+                  hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                  }
               })
             setLoading(false);
         }
