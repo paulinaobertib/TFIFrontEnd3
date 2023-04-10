@@ -28,7 +28,7 @@ function App() {
       <AuthContextProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/auth" element={<AuthLayout />}>
+              <Route path="/auth" element={<AuthLayout />}>
               <Route path="/auth/login" element={<Login />} />
               <Route path="/auth/register" element={<Register />} />
             </Route>

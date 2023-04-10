@@ -28,6 +28,6 @@ export const Glass = styled(Box)`
   padding: 20px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
 `;
