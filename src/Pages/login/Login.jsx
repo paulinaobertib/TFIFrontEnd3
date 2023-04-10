@@ -3,31 +3,33 @@ import { AuthContext } from '../../Components/utils/AuthContext/AuthContext';
 import { Box, Button, TextField } from '@mui/material';
 import PasswordInput from "../../Components/utils/Inputs/PasswordInput";
 import { Link, useNavigate } from 'react-router-dom';
-import { Orbit } from '@uiball/loaders'
+import { MrMiyagi } from '@uiball/loaders'
 import { waait } from '../../Components/utils/helper';
 
 const Login = () => {
+
   const [values, setValues] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const { handleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     if (values.email && values.password) {
         const { user, password, token } = handleLogin();
+
         if (user === values.email && password === values.password) {
-          console.log("hola")
           await waait();
           setLoading(false);
           navigate("/home");
           sessionStorage.setItem("toke", JSON.stringify(token));
         } else {
-        <Alert variant="filled" severity="error">
-          No estas registrado
-        </Alert>
-        navigate("/auth/register");
+          alert("No se encuentra registrado");
+          navigate("/auth/register");
         }
+
     } else {
       alert("Te faltan los valores");
       setLoading(false);
@@ -57,10 +59,11 @@ const Login = () => {
           <Button disabled={loading} type="submit" size="small" variant="contained">
             {
               loading ? (
-                <Orbit
-                  size={25}
-                  speed={1.5}
-                  color="white"
+                <MrMiyagi 
+                size={35}
+                lineWeight={3.5}
+                speed={1} 
+                color="black" 
                 />
               ) : "🦷"
             }
