@@ -10,7 +10,7 @@ const AuthLayout = () => {
         <Box sx={{ margin: "0 auto", mb: 5 }} component="div">
           <CardMedia
             component="img"
-            image="https://i.pinimg.com/originals/b0/3d/e3/b03de32b8d8f53b4d84cba81c7c2b972.png"
+            image="https://media.istockphoto.com/id/943914224/es/vector/icono-de-dental.jpg?s=612x612&w=0&k=20&c=GsWUIF-hIr-sc3T4PlwSPvVhIV1f2iTkN-vC-IX-FxI="
             sx={{ width: "100px", borderRadius: "8px" }}
           />
         </Box>

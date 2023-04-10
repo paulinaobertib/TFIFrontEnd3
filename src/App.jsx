@@ -27,6 +27,7 @@ function App() {
     <Suspense fallback={<h1>Hola, Cargando tu página...</h1>}>
       <AuthContextProvider>
         <BrowserRouter>
+          <div className={ darkMode? "dark" : "light"}>
           <Routes>
               <Route path="/auth" element={<AuthLayout />}>
               <Route path="/auth/login" element={<Login />} />
@@ -37,7 +38,7 @@ function App() {
                 navigation.map(({ id, path, Element }) => (
                   <Route key={id} path={path} element={
                     <>
-                      <Navbar />
+                      <Navbar toggleMode={ toggleMode} />
                       <Element />
                       <Footer />
                     </>
@@ -47,6 +48,7 @@ function App() {
             </Route>
             <Route path="/" element={<Navigate to="/auth/login" />} />
           </Routes>
+          </div>
         </BrowserRouter>
       </AuthContextProvider>
     </Suspense>

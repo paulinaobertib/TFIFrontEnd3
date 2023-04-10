@@ -36,7 +36,7 @@ const Register = () => {
             onChange={(e) => setValues({ ...values, name: e.target.value })}
             />
             <Box sx={{ textAlign: "right" }}>
-            <Button  type="submit" size="small" variant="contained">Submit</Button>
+            <Button  type="submit" size="small" variant="contained">🦷</Button>
             </Box>
         </Box>
         </Fragment>

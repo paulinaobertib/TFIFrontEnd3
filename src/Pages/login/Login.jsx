@@ -23,7 +23,9 @@ const Login = () => {
           navigate("/home");
           sessionStorage.setItem("toke", JSON.stringify(token));
         } else {
-        alert("No estas registrado");
+        <Alert variant="filled" severity="error">
+          No estas registrado
+        </Alert>
         navigate("/auth/register");
         }
     } else {
@@ -60,7 +62,7 @@ const Login = () => {
                   speed={1.5}
                   color="white"
                 />
-              ) : "Submit"
+              ) : "🦷"
             }
           </Button>
         </Box>
